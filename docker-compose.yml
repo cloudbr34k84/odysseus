@@ -68,6 +68,12 @@ services:
         condition: service_healthy
       chromadb:
         condition: service_started
+    labels:
+    - "homepage.group=🤖 AI & Agents"
+    - "homepage.description=AI Workspace"
+    - "homepage.icon=odysseus.png"
+    - "homepage.name=Odysseus"
+    - "traefik.http.routers.${SVCName}.middlewares=oidc"
     restart: unless-stopped
 
   chromadb:
